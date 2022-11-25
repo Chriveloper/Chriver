@@ -39,7 +39,7 @@
       display: inline-block;
       border: solid 0.5vh blue;
       border-radius: 2vh;
-      padding: 1vh 2vh;
+      padding: 0.8vh 1.5vh;
       transition: 0.5s;
     }
   /* states */
