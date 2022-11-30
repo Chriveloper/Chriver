@@ -48,7 +48,7 @@
     /* button interactivity */
       .navbar_element:hover {
         background-color: blue;
-        font-size: large;
+        font-size: 10vh;
       }
       .navbar_element:active {
         background-color: dodgerblue;
