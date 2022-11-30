@@ -30,7 +30,7 @@
     }
     #navbar {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       justify-content: center;
       width: 40vw;
       height: 5vh;
@@ -39,7 +39,15 @@
       box-shadow: 0 0 0.5vh 0.1vh lightseagreen;
     }
     .navbar_element {
-      display: inline-block;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      width: 10vw;
+      height: 5vh;
+      background-color: darkblue;
+      border-radius: 5px;
+      box-shadow: 0 0 0.5vh 0.1vh lightseagreen;
       transition: 0.5s;
     }
   /* states */
