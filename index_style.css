@@ -30,21 +30,16 @@
     }
     #navbar {
       display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      width: 60vw;
+      flex-direction: column;
+      justify-content: center;
+      width: 40vw;
       height: 5vh;
       background-color: darkblue;
       border-radius: 5px;
       box-shadow: 0 0 0.5vh 0.1vh lightseagreen;
     }
     .navbar_element {
-      background: darkblue;
-      margin: 0vh 2vw;
       display: inline-block;
-      border: solid 0.5vh blue;
-      border-radius: 2vh;
-      padding: 0.5vh 1.5vh;
       transition: 0.5s;
     }
   /* states */
