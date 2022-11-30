@@ -7,6 +7,7 @@
     font-size: 2vh;
     font-family: 'Roboto', sans-serif;
     color: white;
+    text-decoration: none;
     }
   body {
     background-color: rgb(25, 25, 25);
@@ -20,35 +21,38 @@
   /* basic */
     #navbar_container {
       position: fixed;
-      top: 1vh;
+      top: 3vh;
       left: 0;
       right: 0;
       display: flex;
       margin: 0 auto;
       flex-direction: row;
       justify-content: center;
+      align-items: center;
     }
     #navbar {
       display: flex;
+      flex-direction: center;
       width: max-content;
       height: max-content;
-      background-color: darkblue;
-      border: 1px solid lightseagreen;
-      box-shadow: lightseagreen;
+      align-items: center;
     }
     .navbar_element {
+      font-size: 3vh;
       display: flex;
       width: max-content;
       height: max-content;
-      padding: 0 2vh;
+      padding: 0 1vh;
       box-shadow: 0 0 0.5vh 0.1vh lightseagreen;
       transition: 0.5s;
+      background-color: darkblue;
+
     }
   /* states */
     /* button interactivity */
       .navbar_element:hover {
         background-color: blue;
-        font-size: 10vh;
+        box-shadow: 0 0 0.5vh 0.5vh lightseagreen;
       }
       .navbar_element:active {
         background-color: dodgerblue;
