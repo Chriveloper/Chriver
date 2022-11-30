@@ -4,17 +4,12 @@
   * {
     margin: 0;
     padding: 0;
+    font-size: 2vh;
+    font-family: 'Roboto', sans-serif;
+    color: white;
     }
-
   body {
     background-color: rgb(25, 25, 25);
-    color: white;
-    font-family: 'Roboto', sans-serif;
-    font-size: 2vh;
-  }
-  a {
-    color: white;
-    text-decoration: none;
   }
   .nabla {
     font-family: 'Nabla', cursive;
@@ -23,7 +18,7 @@
 
 /* navbar */
   /* basic */
-    #navbar {
+    #navbar_container {
       position: fixed;
       top: 1vh;
       left: 0;
@@ -33,20 +28,30 @@
       flex-direction: row;
       justify-content: center;
     }
+    #navbar {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 80%;
+      height: 5vh;
+      background-color: darkblue;
+      border-radius: 5px;
+      box-shadow: 0 0 0.5vh 0.1vh lightseagreen;
+    }
     .navbar_element {
       background: darkblue;
       margin: 0vh 2vw;
       display: inline-block;
       border: solid 0.5vh blue;
       border-radius: 2vh;
-      padding: 0.8vh 1.5vh;
+      padding: 0.5vh 1.5vh;
       transition: 0.5s;
     }
   /* states */
     /* button interactivity */
       .navbar_element:hover {
         background-color: blue;
-        font-size: larger;
+        ;
       }
       .navbar_element:active {
         background-color: dodgerblue;
