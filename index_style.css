@@ -51,8 +51,7 @@
   /* states */
     /* button interactivity */
       .navbar_element:hover {
-        background-color: blue;
-        box-shadow: 0 0 0.5vh 0.5vh lightseagreen;
+        background-color: lightseagreen;
       }
       .navbar_element:active {
         background-color: dodgerblue;
