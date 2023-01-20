@@ -21,7 +21,7 @@
   /* basic */
     #navbar_container {
       position: fixed;
-      top: 3vh;
+      top: 1vh;
       left: 0;
       right: 0;
       display: flex;
@@ -43,15 +43,14 @@
       width: max-content;
       height: max-content;
       padding: 0 1vh;
-      box-shadow: 0 0 0.5vh 0.1vh lightseagreen;
       transition: 0.5s;
-      background-color: darkblue;
-
+      background-color: rgb(25, 25, 25);
     }
   /* states */
     /* button interactivity */
       .navbar_element:hover {
-        background-color: lightseagreen;
+        background-color: white;
+        color: rgb(25, 25, 25);
       }
       .navbar_element:active {
         background-color: dodgerblue;
