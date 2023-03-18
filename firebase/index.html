@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index_style.css">
+  <title>Home</title>
+</head>
+
+<body>
+    
+  
+  <!-- navbar -->
+  <div id="navbar_container">
+    <div id="navbar">
+      <a href="https://play.chriver.me"><span class="navbar_element">Game</span></a>
+      <a href="https://chriver.me/firebase"><span class="navbar_element">Firebase</span></a>
+      <a href="https://chriver.me"><span class="navbar_element">Mio</span></a>
+    </div>
+  </div>
+
+  <form id="comment-form">
+    <input type="text" id="comment-input" placeholder="Enterr your comment here">
+    <button type="submit">Submit</button>
+  </form>
+
+  <div id="comments-container"></div>
+
+
+
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    // Import only the necessary functions from the Firebase SDKs
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-analytics.js";
+    import { getDatabase, ref, push, set, onValue } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-database.js";
+
+
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyA_FYWJFMaqEsDKA6hG5a8UNLsHRPhey3g",
+      authDomain: "chriver-base.firebaseapp.com",
+      databaseURL: "https://chriver-base-default-rtdb.europe-west1.firebasedatabase.app",
+      projectId: "chriver-base",
+      storageBucket: "chriver-base.appspot.com",
+      messagingSenderId: "112536145607",
+      appId: "1:112536145607:web:411335af6fb3712f5278e2",
+      measurementId: "G-WMNJLRYS1Q"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const database = getDatabase(app);
+
+
+// Get a reference to the comment form in your HTML
+const commentForm = document.getElementById('comment-form');
+
+// Add a comment to the Firebase Realtime Database
+// Add a comment to the Firebase Realtime Database
+async function addComment(comment) {
+  try {
+    const commentsRef = ref(database, 'comments');
+    const newCommentRef = push(commentsRef);
+    await set(newCommentRef, comment);
+
+    // Get the key of the newly added comment
+    const commentKey = newCommentRef.key;
+
+    // Create a new comment element
+    const commentElement = document.createElement('div');
+    commentElement.classList.add('comment');
+    commentElement.dataset.commentKey = commentKey;
+    commentElement.innerText = comment;
+
+    // Add the comment element to the comments container
+    const commentsContainer = document.getElementById('comments-container');
+    commentsContainer.prepend(commentElement);
+
+    // Add the "blink" class to the new comment element
+    commentElement.classList.add('blink');
+
+    // Remove the "blink" class after 1 second
+    setTimeout(() => {
+      commentElement.classList.remove('blink');
+    }, 1000);
+
+  } catch (error) {
+    console.error(error);
+    // Handle the error gracefully (e.g. show an error message to the user)
+  }
+}
+
+
+
+
+// Add an event listener to the form submit event
+commentForm.addEventListener('submit', async (event) => {
+  // Prevent the form from submitting normally
+  event.preventDefault();
+
+  // Get the value of the comment input field
+  const commentInput = document.getElementById('comment-input');
+  const comment = commentInput.value;
+
+  // Call the addComment() function to add the comment to the Firebase Realtime Database
+  await addComment(comment);
+
+  // Clear the comment input field
+  commentInput.value = '';
+});
+
+// Get a reference to the comments container in your HTML
+const commentsContainer = document.getElementById('comments-container');
+
+// Listen for changes to the comments in the Firebase Realtime Database
+const commentsRef = ref(database, 'comments');
+onValue(commentsRef, (snapshot) => {
+  // Get the comments data from the snapshot
+  const comments = snapshot.val();
+
+  // Reverse the order of the comments to display the latest message at the top
+  const reversedComments = Object.values(comments).reverse();
+
+  // Create an empty string to store the comments HTML
+  let commentsHTML = '';
+
+  // Loop through the comments and add them to the comments HTML
+  for (const commentKey in reversedComments) {
+    const comment = reversedComments[commentKey];
+    // Add the "new-comment" class to the newest comment element
+    if (commentKey == 0) {
+      commentsHTML += `<div class="comment new-comment">${comment}</div>`;
+      // Remove the "new-comment" class after a short delay
+      setTimeout(() => {
+        const newComment = document.querySelector('.new-comment');
+        if (newComment) {
+          newComment.classList.remove('new-comment');
+        }
+      }, 2000); // Change the delay time as needed
+    } else {
+      commentsHTML += `<div class="comment">${comment}</div>`;
+    }
+  }
+
+  // Set the comments container's innerHTML to the comments HTML
+  commentsContainer.innerHTML = commentsHTML;
+});
+
+
+
+
+
+
+</script>
+  
+  
+</body>
+</html>
