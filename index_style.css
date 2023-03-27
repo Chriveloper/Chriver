@@ -15,6 +15,9 @@
   .nabla {
     font-family: 'Nabla', cursive;
   }
+  .p {
+    margin: 1vw;
+  }
 
 
 /* navbar */
@@ -80,7 +83,7 @@
   .card_container{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
                  
   }
@@ -90,8 +93,6 @@
     display: inline-block;
     background-color: darkblue;
     border-radius: 3vh;
-    flex-grow: 1;
-    flex-shrink: 1;
   }
   .card_image_container{
     width: 32vw;
