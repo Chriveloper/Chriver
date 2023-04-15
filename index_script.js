@@ -9,4 +9,8 @@ function draw() {
     ctx.fillStyle = "rgb(0, 200, 0)";
     ctx.fillRect(30, 60, 50, 50);
   }
-}
+};
+
+document.getElementById("paris").addEventListener("click", function() {
+  alert("Hello Paris! This is my website, under the firebase tab you can find the comments section, you can leave a comment there!");
+});
