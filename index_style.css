@@ -15,7 +15,7 @@
   .nabla {
     font-family: 'Nabla', cursive;
   }
-  .p {
+  * p {
     margin: 1vw;
   }
 
@@ -80,21 +80,24 @@
     }
 
 /* cards */
-  .card_container{
+  .card_container {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    flex-wrap: wrap;
-                 
+    flex-wrap: wrap;            
   }
-  .card{
+  .card {
     width: 32vw;
     height: max-content;
     display: inline-block;
-    background-color: darkblue;
+    background-color: rgb(25, 25, 75);
     border-radius: 3vh;
   }
-  .card_image_container{
+  .card:hover {
+    background-color: rgb(25, 25, 200);
+    transition: 1s;
+  }
+  .card_image_container {
     width: 32vw;
     height: 18vw;
     overflow: hidden;
@@ -105,4 +108,8 @@
     object-fit: cover;
     aspect-ratio: 16/9;
     flex-grow: 100;
+  }
+  .card_text_container {
+    padding: 1vw;
+    overflow-wrap: break-word;
   }
