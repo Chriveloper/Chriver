@@ -11,7 +11,14 @@
     }
   body {
     background-color: rgb(25, 25, 25);
+    overflow-wrap: break-word;
+    
   }
+
+  body::-webkit-scrollbar{
+    display: none;
+  }
+  
   .nabla {
     font-family: 'Nabla', cursive;
   }
@@ -46,8 +53,10 @@
       width: max-content;
       height: max-content;
       padding: 0 1vh;
+      margin: 0 1vh;
       transition: 0.5s;
       background-color: rgb(25, 25, 25);
+      border-radius: 1vh;
     }
   /* states */
     /* button interactivity */
