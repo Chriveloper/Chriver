@@ -37,7 +37,6 @@
         background-position: 300%;
     }
 }
-
-#funButton:hover {
-    
+#canvas2 {
+    display: hidden;
 }
