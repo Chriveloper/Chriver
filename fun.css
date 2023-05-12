@@ -1,24 +1,43 @@
 #funCanvas {
     position: absolute;
     top: 0;
+    left: 0;
 }
 #funButton {
-    background: linear-gradient(to right, #ff0000, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff, #ff0000, #ffff00, #00ff00);
-    background-size: 200%;
-    animation: rainbow 1s linear infinite;
+    background: linear-gradient(90deg,
+        hsl(0, 100%, 50%),
+        hsl(30, 100%, 50%),
+        hsl(60, 100%, 50%),
+        hsl(90, 100%, 50%),
+        hsl(120, 100%, 50%),
+        hsl(150, 100%, 50%),
+        hsl(180, 100%, 50%),
+        hsl(210, 100%, 50%),
+        hsl(240, 100%, 50%),
+        hsl(270, 100%, 50%),
+        hsl(300, 100%, 50%),
+        hsl(330, 100%, 50%),
+        hsl(360, 100%, 50%)
+    );
+    background-size: 300%;
+    animation: rainbow 3s linear infinite;
     border: none;
-    border-radius: 5px;
+    border-radius: 1vh;
     color: white;
     cursor: pointer;
-    font-size: 20px;
-    padding: 10px;
-  }
+    padding: 3px;
+    margin-left: 1vw;
+}
   
-  @keyframes rainbow {
+@keyframes rainbow {
     0% {
-      background-position: 0% 50%;
+        background-position: 0%;
     }
     100% {
-      background-position: 100% 50%;
+        background-position: 300%;
     }
-  }
+}
+
+#funButton:hover {
+    
+}
