@@ -9,14 +9,22 @@
     color: white;
     text-decoration: none;
     }
-
   body {
     background-color: rgb(25, 25, 25);
+    overflow-wrap: break-word;
+    
   }
+
+  body::-webkit-scrollbar{
+    display: none;
+  }
+  
   .nabla {
     font-family: 'Nabla', cursive;
   }
-
+  * p {
+    margin: 1vw;
+  }
 
 
 /* navbar */
@@ -45,14 +53,16 @@
       width: max-content;
       height: max-content;
       padding: 0 1vh;
+      margin: 0 1vh;
       transition: 0.5s;
       background-color: rgb(50, 50, 50);
+      border-radius: 1vh;
     }
   /* states */
     /* button interactivity */
       .navbar_element:hover {
         background-color: white;
-        color: rgb(25, 25, 25);
+        color: rgb(50, 50, 50);
       }
       .navbar_element:active {
         background-color: dodgerblue;
