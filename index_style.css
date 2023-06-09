@@ -18,12 +18,31 @@
   body::-webkit-scrollbar{
     display: none;
   }
-  
-  .nabla {
-    font-family: 'Nabla', cursive;
-  }
+
   * p {
     margin: 1vw;
+  }
+
+  @font-palette-values --altone
+  {
+    font-family: Nabla;
+    override-colors:
+      0 #329ADE,
+      1 #5400EF,
+      2 #5E51FA,
+      3 #5A2AF9,
+      4 #329ADE,
+      5 #33E0FD,
+      6 #329ADE,
+      7 #33E0FD,
+      8 #87FFFE,
+      9 #FFFFFF;
+  }
+
+    
+  .nabla {
+    font-family: "Nabla", cursive;
+    font-palette: --altone;
   }
 
 
@@ -74,7 +93,7 @@
 
 /* heading */
     #heading {
-      font-size: 15vh;
+      font-size: 12vh;
     }
     #heading_container {
       display: flex;
