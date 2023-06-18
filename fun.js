@@ -91,3 +91,12 @@ window.addEventListener("resize", () => {
 })
 });
 
+funButton.style.visibility = "hidden";
+const heading = document.getElementById("heading");
+let counter = 0;
+heading.addEventListener("click", () => {
+    counter++;
+    if (counter >=5) {
+    funButton.style.visibility = "visible";
+    }
+    });
