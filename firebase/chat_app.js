@@ -4,7 +4,7 @@ const message = document.getElementById('message');
 sendButton.addEventListener('click', sendMessage);
 
 function sendMessage() {
-    // You can call authenticate inside sendMessage to get the user value.
+    // You can call authenticate inside sendMessage to get the user value
     authenticate()
         .then(user => {
             const messageData = {
