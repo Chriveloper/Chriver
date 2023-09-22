@@ -1,58 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="index_style.css">
-  <title>Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chrixel Chat</title>
 </head>
-
 <body>
-  
-  <div id="navbar_container">
-    <div id="navbar">
-      <a href="https://play.chriver.me"><span class="navbar_element">Game</span></a>
-      <a href="https://chriver.me/firebase"><span class="navbar_element">Chat</span></a>
-      <a href="https://chriver.me"><span class="navbar_element">Home</span></a>
-    </div>
+  test
+  <div id="chat">
+    <input type="text" id="message" placeholder="Your Message">
+    <button id="send">Send</button>
   </div>
 
-  <form id="comment-form">
-    <input type="text" id="comment-input" placeholder="Enterr your comment here">
-    <button type="submit">Submit</button>
-  </form>
 
-  <div id="comments-container"></div>
+  <script type="module">
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.3.1/firebase-app.js';
+    import { getDatabase, ref, push } from 'https://www.gstatic.com/firebasejs/10.3.1/firebase-database.js';
 
-<script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js";
-  import { getDatabase, ref, push, set, onValue } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-database.js";
+    const firebaseConfig = {
+    apiKey: "AIzaSyAfDZvodIcquEeiYGeaTUW2ToO41yD0WYU",
+    authDomain: "chrixelchat.firebaseapp.com",
+    databaseURL: "https://chrixelchat-default-rtdb.europe-west1.firebasedatabase.app",
+    projectId: "chrixelchat",
+    storageBucket: "chrixelchat.appspot.com",
+    messagingSenderId: "1004222977127",
+    appId: "1:1004222977127:web:6f1c5cb058f34b390430c2"
+    };
 
-  const firebaseConfig = {
-      apiKey: "AIzaSyA_FYWJFMaqEsDKA6hG5a8UNLsHRPhey3g",
-      authDomain: "chriver-base.firebaseapp.com",
-      databaseURL: "https://chriver-base-default-rtdb.europe-west1.firebasedatabase.app",
-      projectId: "chriver-base",
-      storageBucket: "chriver-base.appspot.com",
-      messagingSenderId: "112536145607",
-      appId: "1:112536145607:web:411335af6fb3712f5278e2",
-      measurementId: "G-WMNJLRYS1Q"
-  };
+    window.app = initializeApp(firebaseConfig);
+    window.database = getDatabase(app);
+    window.ref = ref;
+    window.push = push;
+  </script>
 
-  const app = initializeApp(firebaseConfig);
-  const database = getDatabase(app);
-
-// Assign those variables to the window object to make them global
-window.database = database;
-window.firebaseRef = ref;
-window.firebasePush = push;
-window.firebaseSet = set;
-window.firebaseOnValue = onValue;
-
-</script>
-
-<script src="script.js" defer></script>
-  
+  <script src="chat_app.js"></script>
 </body>
-</html>
+</html> 
