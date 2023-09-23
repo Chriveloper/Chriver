@@ -1,3 +1,14 @@
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.3.1/firebase-app.js'
+import { getDatabase, ref, push, onValue } from 'https://www.gstatic.com/firebasejs/10.3.1/firebase-database.js'
+
+const appSettings = {
+    databaseURL: "https://chrixelchat-default-rtdb.europe-west1.firebasedatabase.app/"
+};
+
+const app = initializeApp(appSettings);
+console.log(app);
+const database = getDatabase(app);
+
 const sendButton = document.getElementById('send');
 const message = document.getElementById('message');
 

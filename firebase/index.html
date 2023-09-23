@@ -13,26 +13,7 @@
   </div>
 
 
-  <script type="module">
-    import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.3.1/firebase-app.js';
-    import { getDatabase, ref, push } from 'https://www.gstatic.com/firebasejs/10.3.1/firebase-database.js';
 
-    const firebaseConfig = {
-    apiKey: "AIzaSyAfDZvodIcquEeiYGeaTUW2ToO41yD0WYU",
-    authDomain: "chrixelchat.firebaseapp.com",
-    databaseURL: "https://chrixelchat-default-rtdb.europe-west1.firebasedatabase.app",
-    projectId: "chrixelchat",
-    storageBucket: "chrixelchat.appspot.com",
-    messagingSenderId: "1004222977127",
-    appId: "1:1004222977127:web:6f1c5cb058f34b390430c2"
-    };
-
-    window.app = initializeApp(firebaseConfig);
-    window.database = getDatabase(app);
-    window.ref = ref;
-    window.push = push;
-  </script>
-
-  <script src="chat_app.js"></script>
+  <script src="chat_app.js" type="module"></script>
 </body>
 </html> 
