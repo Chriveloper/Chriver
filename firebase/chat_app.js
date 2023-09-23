@@ -1,15 +1,24 @@
 const sendButton = document.getElementById('send');
 const message = document.getElementById('message');
 
+function milliUTC() {
+    return jetzt().getTime() + (jetzt().getTimezoneOffset() * 60000);
+}
+
+function jetzt() {
+    return new Date()
+}
+
 sendButton.addEventListener('click', sendMessage);
 
 function sendMessage() {
-    // You can call authenticate inside sendMessage to get the user value
+
     authenticate()
         .then(user => {
             const messageData = {
                 user: user,
-                message: message.value // You should use message.value here
+                message: message.value,
+                utc: milliUTC()
             };
 
             const messagesRef = ref(database, 'messages');
@@ -36,9 +45,10 @@ function Ip() {
 }
 
 function getIp() {
-    return Ip(); // Return the promise here
+    return Ip();
 }
 
+//create a sum of the char codes
 function ezhash(str) {
     let hash = 0;
     for (let i = 0; i < str.length; i++) {
@@ -60,3 +70,7 @@ function authenticate() {
         });
 }
 
+function milliUTCToLocal(a) {
+    const date = new Date(a);
+    return date.toLocaleString();
+}
