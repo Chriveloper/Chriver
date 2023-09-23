@@ -6,7 +6,6 @@ const appSettings = {
 };
 
 const app = initializeApp(appSettings);
-console.log(app);
 const database = getDatabase(app);
 
 const sendButton = document.getElementById('send');
@@ -85,3 +84,17 @@ function milliUTCToLocal(a) {
     const date = new Date(a);
     return date.toLocaleString();
 }
+onValue(ref(database, 'messages'), (snapshot) => {
+    const messagesData = snapshot.val();
+    if (messagesData) {
+        for (const messageId in messagesData) {
+            if (messagesData.hasOwnProperty(messageId)) {
+                const message = messagesData[messageId];
+                const user = message.user;
+                const messageText = message.message;
+                const utc = message.utc;
+                
+            }
+        }
+    }
+});
