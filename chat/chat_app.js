@@ -9,7 +9,7 @@ const app = initializeApp(appSettings);
 const database = getDatabase(app);
 
 const sendButton = document.getElementById('send');
-const message = document.getElementById('message');
+const messageInput = document.getElementById('messageInput');
 
 function milliUTC() {
     return jetzt().getTime() + (jetzt().getTimezoneOffset() * 60000);
@@ -27,14 +27,14 @@ function sendMessage() {
         .then(user => {
             const messageData = {
                 user: user,
-                message: message.value,
+                message: messageInput.value,
                 utc: milliUTC()
             };
 
             const messagesRef = ref(database, 'messages');
             push(messagesRef, messageData);
 
-            message.value = '';
+            messageInput.value = '';
         })
         .catch(error => {
             console.error('Error:', error);
@@ -81,8 +81,8 @@ function authenticate() {
 }
 
 function milliUTCToLocal(a) {
-    const date = new Date(a);
-    return date.toLocaleString();
+    const milliLocal = new Date(a-(jetzt().getTimezoneOffset() * 60000));
+    return milliLocal.toLocaleString();
 }
 onValue(ref(database, 'messages'), (snapshot) => {
     const messagesData = snapshot.val();
@@ -93,7 +93,11 @@ onValue(ref(database, 'messages'), (snapshot) => {
                 const user = message.user;
                 const messageText = message.message;
                 const utc = message.utc;
-                
+                console.log(messageText);
+                const messageElement = document.createElement('div');
+                messageElement.innerHTML = `<b>${user}</b>: ${messageText} <i>${milliUTCToLocal(utc)}</i>`;
+                document.getElementById('messages').appendChild(messageElement);
+                messageElement.scrollIntoView();
             }
         }
     }
