@@ -122,6 +122,3 @@
         function exponentiell(x) {
             return Math.pow(2, x);
         }
-        let ar1 = ['exponentiell', 'f(x)=2^x', exponentiell(  kkj)];
-        fillRow('row1', ar1);
-        let ar2 = ['linear',]
