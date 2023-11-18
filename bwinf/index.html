@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="indexStyle.css">
+</head>
+<body>
+    <h1>Nandu</h1>
+    <p>Gebe die gewuenschte Laenge und Hoehe des Spielfelds in die Eingabefelder und druecke anschliessend auf die "Erstelle das Spielfeld" Schaltflaeche um das Spielfeld zu erstellen.
+    <br>Um einen Baustein zu platzieren, klicke auf den gewuenschten Baustein, der derzeit ausgesuchte Baustein hat eine hellgruene Umrahmung. Nachdem du den Baustein ausgesucht hast, gehe mit der Maus ueber das Spielfeld, dabei wird ein hellgruener Schatten auf die Felder geworfen, ueber die der ausgesuchte Baustein platziert wird, sobald man die Maus klickt. Du kannst nicht auf bereits besetzte Felder Bausteine platzieren oder Bausteine ausserhalb des Spielfelds platzieren.
+    <br>Um
+    <br>Um die das Spielfeld mit seinen Konstruktionen zurueckzusetzen, druecke auf die "Setze das Spielfeld zurueck" Schaltflaeche. Du kannst jeder Zeit ein neues Spielfeld erzeugen, indem du die Laenge und Hoehe des Spielfelds in die Eingabefelder eingibst und auf die "Erstelle das Spielfeld" Schaltflaeche drueckst.
+    </p>
+    <input type="number" id="laenge" placeholder="Laenge">
+    <input type="number" id="hoehe" placeholder="Hoehe">
+    <button id="button">Erstelle das Spielfeld</button>
+    <button id="delete">Setze das Spielfeld zurueck</button>
+    <button id="los">Lichtweg kalkulieren</button>
+    <!--  -->
+    <div id="bausteine">
+        <div id="rotRr" class="stein"></div>
+        <div id="rot_rR" class="stein"></div>
+        <div id="blauBB" class="stein"></div>
+        <div id="weissWW" class="stein"></div>
+    </div>
+    <div id="playground"></div>
+
+    <script src="test.js"></script>
+    <script src="indexScript.js"></script>
+</body>
+</html>
