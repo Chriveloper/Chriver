@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Nabla&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* basic style */
+  * {
+    margin: 0;
+    padding: 0;
+    font-size: 2vmin;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    text-decoration: none;
+    line-height: 3vmin;  
+  }
+  body {
+    background-color: rgb(25, 25, 25);
+    overflow-wrap: break-word;
+    
+  }
+
+  body::-webkit-scrollbar{
+    display: none;
+  }
+
+  * p {
+    margin: 2vmin;
+  }
+
+
+
+/* blue palette */
+    @font-palette-values --blueus
+    {
+        font-family: Nabla;
+        override-colors:
+        0 #329ADE,
+        1 #5400EF,
+        2 #5E51FA,
+        3 #5A2AF9,
+        4 #329ADE,
+        5 #33E0FD,
+        6 #329ADE,
+        7 #33E0FD,
+        8 #87FFFE,
+        9 #FFFFFF;
+    }
+
+/* purple-blue palette */
+@font-palette-values --purpleus
+{
+    font-family: Nabla;
+    override-colors:
+    0 #6A0DAD,
+    1 #7E1E9C,
+    2 #46038D,
+    3 #4B0082,
+    4 #483D8B,
+    5 #3A3B6F,
+    6 #2E0854,
+    7 #120A8F,
+    8 #0000CD,
+    9 #0000FF;
+}
+
+    
+.nabla {
+    font-family: "Nabla", cursive;
+    font-palette: --blueus;
+    transition: 2s;
+  }
+
+
+/* navbar */
+  /* basic */
+    #navbar_container {
+      position: fixed;
+      top: 1vmin;
+      left: 0;
+      right: 0;
+      display: flex;
+      margin: 0 auto;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+    #navbar {
+      display: flex;
+      flex-direction: center;
+      width: max-content;
+      height: max-content;
+      align-items: center;
+    }
+    .navbar_element {
+      font-size: 4vmin;
+      display: flex;
+      width: max-content;
+      height: max-content;
+      padding: 1vmin 2vmin;
+      margin: 1vmin 3vmin;
+      transition: 0.5s;
+      background-color: rgb(50, 50, 50);
+      border-radius: 1vmin;
+    }
+  /* states */
+    /* button interactivity */
+      .navbar_element:hover {
+        /* create a bright shadow */
+        box-shadow: 0 0 0.5vmin 0.5vmin rgb(100, 100, 100);
+      }
+      .navbar_element:active {
+        background-color: dodgerblue;
+      }
+
