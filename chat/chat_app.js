@@ -85,8 +85,10 @@ function milliUTCToLocal(a) {
     return milliLocal.toLocaleString();
 }
 onValue(ref(database, 'messages'), (snapshot) => {
+    console.log('Fetching messages from Firebase...');
     const messagesData = snapshot.val();
     if (messagesData) {
+        console.log('Messages data:', messagesData);
         for (const messageId in messagesData) {
             if (messagesData.hasOwnProperty(messageId)) {
                 const message = messagesData[messageId];
@@ -94,11 +96,15 @@ onValue(ref(database, 'messages'), (snapshot) => {
                 const messageText = message.message;
                 const utc = message.utc;
                 const messageElement = document.createElement('div');
-                messageElement.addClass = 'message';
-                messageElement.innerHTML = `<div class='user'>${user}</div>: <div class = messageText>${messageText}</div> <div class='time'>${milliUTCToLocal(utc)}</div>`;
+                messageElement.className = 'message'; // Corrected from addClass to className
+                messageElement.innerHTML = `<div class='user'>${user}</div>: <div class='messageText'>${messageText}</div> <div class='time'>${milliUTCToLocal(utc)}</div>`;
                 document.getElementById('messages').appendChild(messageElement);
                 messageElement.scrollIntoView();
             }
         }
+    } else {
+        console.log('No messages found in the database.');
     }
+}, (error) => {
+    console.error('Error fetching messages:', error);
 });
