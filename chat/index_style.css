@@ -18,16 +18,11 @@
   border: 1px solid #991144;
 }
 
-.user {
-  font-weight: bold;
+.userTime {
   color: #3c763d;
   border: 1px solid #113399;
 }
 
-.time {
-  font-size: 0.8em;
-  border: 1px solid #339922;
-}
 
 
 .table {
@@ -82,5 +77,4 @@
 .message {
   padding: 10px;
   margin: 10px 0;
-  border-bottom: 1px solid #ddd;
 }

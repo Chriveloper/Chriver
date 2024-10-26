@@ -97,7 +97,7 @@ onValue(ref(database, 'messages'), (snapshot) => {
                 const utc = message.utc;
                 const messageElement = document.createElement('div');
                 messageElement.className = 'message'; // Corrected from addClass to className
-                messageElement.innerHTML = `<div class='user'>${user}</div>: <div class='messageText'>${messageText}</div> <div class='time'>${milliUTCToLocal(utc)}</div>`;
+                messageElement.innerHTML = `<div class='userTime'>${milliUTCToLocal(utc)}: ${user}</div><div class='messageText'>${messageText}</div>`;
                 document.getElementById('messages').appendChild(messageElement);
                 messageElement.scrollIntoView();
             }
